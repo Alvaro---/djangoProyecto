@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {%block title%} {{jobs}} {%endblock%} 
+{%block content%} {%load static%}
+<h1>JOBS</h1>
+
+{% for job in allJobs%}
+<p><a href="{{job.link}}">{{job.title}}</a> author: {{job.empresa}}</p>
+<p>hace {{job.publicationDate|date:"g"}} hrs</p>
+
+{% endfor %} 
+<h2><a href="{% url 'wellcome' %}"> Ir a Inicio </a></h2>
+
+{%endblock%}

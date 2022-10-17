@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {%block title%} home {%endblock%} {%block content%}
+<a href="{% url 'wellcome' %}">Wellcome</a>
+<h1>Hay {{countNews}} noticia en la base de datos</h1>
+{% for new in news%}
+<p><a href="{{new.link}}">{{new.title}}</a> author: {{new.author}}</p>
+<p>hace {{new.publicationDate|date:"g"}} hrs</p>
+
+<h2><a href="{% url 'jobs' %}"> Ir a JOBS </a></h2>
+{% endfor %} {%endblock%}
